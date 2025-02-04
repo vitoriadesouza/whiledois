@@ -6,11 +6,19 @@
     */
 
     //ENTRADA
+    let senha = Number(prompt(`Informe uma senha contendo quatro números inteiros:`));
+    while (senha.toString().length < 4) {
+        senha = Number(prompt(`Erro! Informe uma senha que contenha quatro dígitos:`));
+    }
 
-
+    let verificacao = Number(prompt(`Informe novamente a senha inserida para a verficação:`));
+    while (verificacao !== senha) {
+        verificacao = Number(prompt(`Senha Incorreta. Digite novamente:`))
+    }
+    alert(`Senha Correta!`);
     //PROCESSAMENTO
 
-
+    
     //SAÍDA
-
+   
 </script>

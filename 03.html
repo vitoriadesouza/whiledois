@@ -14,29 +14,28 @@
 
     //PROCESSAMENTO
     let nome = prompt(`Informe um nome:`).toLowerCase();
-    let letras = nome.lenght;
-    while (nome <= 3) {
+    while (nome.length <= 3) {
         nome = prompt(`Informe um nome com mais de três caracteres`);
     }
 
     let idade = Number(prompt(`Informe uma idade:`));
     while (idade < 0 || idade > 150) {
-        idade = Number(prompt(`Informe uma idade válida:`));
+        idade = Number(prompt(`Erro!! Informe uma idade válida:`));
     }
 
-    let salario = Number(prompt(`Informe um salário:`));
+    let salario = Number(prompt(`Informe um salário válido:`));
     while (salario <= 0) {
-        salario = Number(prompt(`Informe um salário válido:`))
+        salario = Number(prompt(`Erro!! Informe um salário válido:`))
     }
 
     let sexo = prompt(`Informe um sexo (f = feminino e m = masculino):`).toLowerCase();
-    while (sexo != `f` || sexo != `m`) {
-        sexo = prompt(`Informe um sexo válido!`)
+    while (sexo != `f` && sexo != `m`) {
+        sexo = prompt(`Erro!! Informe um sexo válido!`)
     }
 
-    let estado = prompt(`Informe o seu estado civil (s para solteiro/a, c para casado/a, v para viúvo/a e d para divorciado/a)`);
-    while (estado != `s` || estado != `c` || estado != `v` || estado != `d`) {
-        estado = prompt(`Informe um estado válido:`)
+    let estado = prompt(`Informe o seu estado civil (s para solteiro/a, c para casado/a, v para viúvo/a e d para divorciado/a)`).toLowerCase();
+    while (estado != `s` && estado != `c` && estado != `v` && estado != `d`) {
+        estado = prompt(`Erro!! Informe um estado válido:`)
     }
     //SAÍDA
 </script>
