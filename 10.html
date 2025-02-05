@@ -5,11 +5,21 @@
     */
 
     //ENTRADA
-
+    let numero = Number(prompt(`Quantos números da sequência de Fibonacci desejar obter?`));
+    let a = 0;
+    let b = 1;   
+    let count = 0;
 
     //PROCESSAMENTO
-
-
-    //SAÍDA
+    let sequenciaFibonacci = [];
     
+    while(count < numero) {
+        sequenciaFibonacci.push(a);
+        let temp = a;
+        a = b;
+        b = temp + b;
+        count++
+    }
+    //SAÍDA
+    alert(`A sequência de Fibonacci com ${numero} números é: ${sequenciaFibonacci.join(", ")}`);
 </script>

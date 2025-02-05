@@ -8,11 +8,15 @@
     */
 
     //ENTRADA
-
-
+    let numero = Number(prompt(`Digite um número:`))
+    let numeroInvertido = "";
+    numero = numero.toString();
     //PROCESSAMENTO
-
-
+    let i = numero.length - 1;
+    while (i >= 0) {
+        numeroInvertido += numero[i];
+        i--;   
+    }
     //SAÍDA
-
+    alert(`O número invertido é ${numeroInvertido}.`);
 </script>

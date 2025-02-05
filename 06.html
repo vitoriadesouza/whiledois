@@ -20,14 +20,43 @@
     */
 
     //ENTRADA
-    let voto = prompt(`Escolha o seu voto: \n \n 1. Candidato Joãozinho \n 2. Candidata Mariazinha \n 3. Nulo \n 4. Branco`);
-    let joaozinho = 1;
-    let mariazinha = 2;
-    let nulo = 3;
-    let branco = 4;
+    let votosJoaozinho = 0;
+    let votosMariazinha = 0;
+    let votosNulos = 0;
+    let votosBrancos = 0;
+    let totalVotos = 0;
     //PROCESSAMENTO
-
-
+    let voto = -1
+    while (voto !== 0) {
+        voto = Number(prompt(`As opções são: \n \n 1. Candidato Joãozinho \n 2. Candidata Mariazinha \n 3. Nulo \n 4. Branco \n \n Para encerrrar a votação, digite o número 0.`));
+        if (voto === 1) {
+            votosJoaozinho++
+            totalVotos++
+        } else if (voto === 2) {
+            votosMariazinha++
+            totalVotos++
+        } else if (voto === 3) {
+            votosNulos++
+            totalVotos++
+        } else if (voto === 4) {
+            votosBrancos++
+            totalVotos++
+        } else if (voto !== 0) {
+            alert(`Voto inválido! Tente novamente.`);
+        }
+    }
+    let porcentNulos = 0;
+    let porcentBrancos = 0;
+    if (totalVotos > 0) {
+        porcentNulos = (votosNulos / totalVotos) * 100;
+        porcentBrancos = (votosBrancos / totalVotos) * 100;
+    }
+    let vencedor = "Empate"
+    if (votosJoaozinho > votosMariazinha) {
+        vencedor = "Joãozinho";
+    } else if (votosMariazinha > votosJoaozinho) {
+        vencedor = "Mariazinha";
+    }
+    alert(`Resultados: \n Votos do Candidato Joãozinho: ${votosJoaozinho} \n Votos da Candidata Mariazinha: ${votosMariazinha} \n Votos Nulos: ${votosNulos} \n Votos Brancos: ${votosBrancos} \n \n Porcentagem de votos nulos: ${porcentNulos.toFixed(2)}% \n Porcentagem de votos brancos: ${porcentBrancos.toFixed(2)}% \n \n VENCEDOR(A): ${vencedor}`)
     //SAÍDA
-
 </script>
